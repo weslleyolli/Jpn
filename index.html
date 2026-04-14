@@ -327,7 +327,7 @@ to   { opacity: 1; transform: translateX(0); }
 
 /* Card text sits above character */
 .card-day-num, .card-date, .card-title,
-.card-activities, .card-theme-tag { position: relative; z-index: 1; }
+.card-activities { position: relative; z-index: 1; }
 
 .card-day-num {
   font-family: var(--font-mono); font-size: .7rem;
@@ -369,15 +369,6 @@ to   { opacity: 1; transform: translateX(0); }
   background: color-mix(in srgb, var(--card-accent) 18%, transparent);
   color: var(--card-accent); margin-left: .4rem; vertical-align: middle;
 }
-.card-theme-tag {
-  display: inline-flex; align-items: center; gap: .4rem;
-  margin-top: 1.1rem; padding: .28rem .8rem;
-  border: 1px solid color-mix(in srgb, var(--card-accent) 45%, transparent);
-  font-family: var(--font-mono); font-size: .67rem;
-  letter-spacing: .1em; color: var(--card-accent); text-transform: uppercase;
-  position: relative; z-index: 1;
-}
-
 /* ── Theme variables ── */
 .theme-naruto  { --card-accent: #FF6B00; --card-accent-rgb: 255,107,0; }
 .theme-pokemon { --card-accent: #FFD700; --card-accent-rgb: 255,215,0; }
@@ -515,8 +506,6 @@ footer {
   .act-emoji { font-size: .95rem; }
   .act-sub { font-size: .66rem; }
   .glow-pill { font-size: .55rem; padding: .08rem .4rem; }
-  .card-theme-tag { font-size: .58rem; padding: .2rem .6rem; margin-top: .8rem; }
-
   /* Arrow row (Fuji) */
   .arrow-row { flex-wrap: wrap; gap: .5rem; font-size: .7rem; padding: .5rem .7rem; }
   .arrow-line { min-width: 20px; }
@@ -680,7 +669,6 @@ footer {
         <li class="card-activity"><span class="act-emoji">🎨</span><span class="act-text">Ikebukuro<span class="act-sub">Sunshine City, Animate, lojas de anime — bairro animado e otaku</span></span></li>
         <li class="card-activity"><span class="act-emoji">🍣</span><span class="act-text">Kura Sushi ★<span class="glow-pill">must eat</span><span class="act-sub">Sushi giratório com preços ótimos — experiência clássica japonesa</span></span></li>
       </ul>
-      <div class="card-theme-tag">🍥 Naruto Theme</div>
     </div>
   </article>
 
@@ -697,7 +685,6 @@ footer {
         <li class="card-activity"><span class="act-emoji">🧸</span><span class="act-text">Kiddy Land<span class="act-sub">5 andares de brinquedos, figures, Hello Kitty e personagens</span></span></li>
         <li class="card-activity"><span class="act-emoji">✨</span><span class="act-text">Shinjuku<span class="act-sub">Luzes de néon, Golden Gai e Kabukicho — a cidade que não dorme</span></span></li>
       </ul>
-      <div class="card-theme-tag">⚡ Pokémon Theme</div>
     </div>
   </article>
 
@@ -713,7 +700,6 @@ footer {
         <li class="card-activity"><span class="act-emoji">🛍️</span><span class="act-text">Ginza<span class="act-sub">O bairro mais sofisticado: galerias, arquitetura e design japonês</span></span></li>
         <li class="card-activity"><span class="act-emoji">🎨</span><span class="act-text">TeamLab Planets<span class="glow-pill">must do</span><span class="act-sub">Arte digital imersiva — você entra literalmente dentro das obras</span></span></li>
       </ul>
-      <div class="card-theme-tag">🩸 Jujutsu Kaisen Theme</div>
     </div>
   </article>
 
@@ -730,7 +716,6 @@ footer {
         <li class="card-activity"><span class="act-emoji">⚡</span><span class="act-text">Pokémon Center Shibuya<span class="act-sub">Segunda chance para aquela card rara que faltou!</span></span></li>
         <li class="card-activity"><span class="act-emoji">🌆</span><span class="act-text">Shibuya Sky<span class="glow-pill">top pick</span><span class="act-sub">Terraço aberto — pôr do sol sobre Tokyo do topo do Scramble Square</span></span></li>
       </ul>
-      <div class="card-theme-tag">⚡ Pokémon Theme</div>
     </div>
   </article>
 
@@ -747,7 +732,6 @@ footer {
         <li class="card-activity"><span class="act-emoji">🏯</span><span class="act-text">Kinkaku-ji — Templo Dourado<span class="act-sub">Pavilhão coberto de folhas de ouro refletido no lago</span></span></li>
         <li class="card-activity"><span class="act-emoji">🚄</span><span class="act-text">Kyoto → Tokyo<span class="act-sub">Retorno no fim da tarde — descanso antes da Disney!</span></span></li>
       </ul>
-      <div class="card-theme-tag">⛩️ Kyoto — Antiga Capital</div>
     </div>
   </article>
 
@@ -773,7 +757,6 @@ footer {
           <li class="card-activity"><span class="act-emoji">🍔</span><span class="act-text">Turkey Leg &amp; Mickey Waffles<span class="act-sub">Exclusivos da Disney Japan — sabores únicos</span></span></li>
         </ul>
       </div>
-      <div class="card-theme-tag" style="grid-column:1/-1">🏰 Tokyo Disneyland</div>
     </div>
   </article>
 
@@ -799,7 +782,6 @@ footer {
           <li class="card-activity"><span class="act-emoji">🐟</span><span class="act-text">Nemo &amp; Friends SeaRider<span class="act-sub">Imersão subaquática com projeções — tecnologia impressionante</span></span></li>
         </ul>
       </div>
-      <div class="card-theme-tag" style="grid-column:1/-1">🌊 Tokyo DisneySea</div>
     </div>
   </article>
 
@@ -815,7 +797,6 @@ footer {
         <li class="card-activity"><span class="act-emoji">🕹️</span><span class="act-text">Arcades de Vários Andares<span class="act-sub">Taiko no Tatsujin, UFO catchers, maquinas retro — pura diversão</span></span></li>
         <li class="card-activity"><span class="act-emoji">🗓️</span><span class="act-text">Rolê Livre em Grupo<span class="glow-pill">escolha do grupo</span><span class="act-sub">Qualquer canto que todo mundo queira — vocês decidem!</span></span></li>
       </ul>
-      <div class="card-theme-tag">🍥 Naruto Theme</div>
     </div>
   </article>
 
@@ -837,7 +818,6 @@ footer {
         <div class="arrow-line"></div>
         <span>OSAKA 🌃</span>
       </div>
-      <div class="card-theme-tag">🗻 Monte Fuji</div>
     </div>
   </article>
 
