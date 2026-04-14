@@ -91,7 +91,6 @@ body {
 .nav-item {
   display: flex; align-items: center; gap: .6rem;
   cursor: pointer; text-decoration: none;
-  group: true;
 }
 .nav-label {
   font-family: var(--font-mono); font-size: .62rem;
@@ -143,19 +142,7 @@ body {
     radial-gradient(ellipse 50% 80% at 18% 50%, rgba(0,245,255,.06) 0%, transparent 60%);
 }
 
-/* Hero character image */
-.hero-char {
-  position: absolute; right: -2rem; bottom: 0;
-  height: 92%; width: auto;
-  object-fit: contain; object-position: bottom right;
-  pointer-events: none; user-select: none;
-  opacity: 0; animation: heroCharIn 1s 1.3s ease forwards;
-  filter: drop-shadow(0 0 60px rgba(255,215,0,.25));
-  z-index: 0;
-}
-@keyframes heroCharIn {
-  from { opacity: 0; transform: translateX(40px); }
-  to   { opacity: 1; transform: translateX(0); }
+to   { opacity: 1; transform: translateX(0); }
 }
 
 .hero-date {
@@ -338,19 +325,6 @@ body {
   color: rgba(255,255,255,.04); pointer-events: none; line-height: 1;
 }
 
-/* Anime character in card */
-.card-char {
-  position: absolute; right: -10px; bottom: 0;
-  height: 85%; width: auto;
-  object-fit: contain; object-position: bottom right;
-  pointer-events: none; user-select: none;
-  opacity: .18;
-  filter: saturate(1.2);
-  transition: opacity .4s ease;
-  z-index: 0;
-}
-.card-inner:hover .card-char { opacity: .35; }
-
 /* Card text sits above character */
 .card-day-num, .card-date, .card-title,
 .card-activities, .card-theme-tag { position: relative; z-index: 1; }
@@ -472,8 +446,6 @@ footer {
   .day-card.full-width { margin-left: 3.5rem !important; width: calc(100% - 3.5rem) !important; }
   .day-card.full-width .card-inner { grid-template-columns: 1fr; }
   .hero-title { font-size: clamp(5rem,18vw,7rem); }
-  .hero-char  { height: 55%; opacity: .25; }
-  .card-char  { height: 60%; }
 }
 
 /* ── Responsive — Mobile ── */
@@ -487,7 +459,6 @@ footer {
   .hero-title { font-size: clamp(4rem, 22vw, 6rem); }
   .hero-year { font-size: clamp(1.8rem, 10vw, 3.5rem); }
   .hero-sub { font-size: .78rem; margin-top: 1.2rem; letter-spacing: .03em; }
-  .hero-char { height: 40%; opacity: .2; right: -1rem; }
 
   /* Badges */
   .hero-badges { gap: .4rem; margin-top: 1.5rem; justify-content: center; }
@@ -536,8 +507,7 @@ footer {
   .card-day-num { font-size: .6rem; letter-spacing: .15em; margin-bottom: .3rem; }
   .card-date { font-size: 1.8rem; }
   .card-title { font-size: .75rem; margin-bottom: 1rem; }
-  .card-char { height: 35%; opacity: .08; right: -5px; }
-  #day-2 .card-char { height: 25%; }
+  #day-2
 
   /* Activities */
   .card-activities { gap: .4rem; }
@@ -699,7 +669,6 @@ footer {
   <!-- DIA 1 — 22/04 — NARUTO -->
   <article class="day-card theme-naruto" id="day-1">
     <div class="card-inner" data-kanji="忍">
-      <img class="card-char" src="Naruto.png" alt="Naruto" />
       <p class="card-day-num">// DIA 01 &nbsp;•&nbsp; TERÇA</p>
       <h2 class="card-date">22 ABR</h2>
       <p class="card-title">Templos, Torres &amp; Tradição</p>
@@ -718,7 +687,6 @@ footer {
   <!-- DIA 2 — 23/04 — POKÉMON -->
   <article class="day-card theme-pokemon" id="day-2">
     <div class="card-inner" data-kanji="電">
-      <img class="card-char" src="pokemon.png" alt="Pokemon" style="height:40%; max-width:35%; opacity:.12;" />
       <p class="card-day-num">// DIA 02 &nbsp;•&nbsp; QUARTA</p>
       <h2 class="card-date">23 ABR</h2>
       <p class="card-title">Pokémon, Kawaii &amp; Néon</p>
@@ -736,7 +704,6 @@ footer {
   <!-- DIA 3 — 24/04 — JJK -->
   <article class="day-card theme-jjk" id="day-3">
     <div class="card-inner" data-kanji="呪">
-      <img class="card-char" src="Satoru-Gojo-Jujutsu-1699.png" alt="Satoru Gojo" />
       <p class="card-day-num">// DIA 03 &nbsp;•&nbsp; QUINTA</p>
       <h2 class="card-date">24 ABR</h2>
       <p class="card-title">Robôs, Arte Digital &amp; Energia Maldita</p>
@@ -753,7 +720,6 @@ footer {
   <!-- DIA 4 — 25/04 — POKÉMON -->
   <article class="day-card theme-pokemon" id="day-4">
     <div class="card-inner" data-kanji="渋">
-      <img class="card-char" src="Pikachu-Pokemon-Character-PNG-Transparent-Beloved-and-Electrifying.png" alt="Pikachu" />
       <p class="card-day-num">// DIA 04 &nbsp;•&nbsp; SEXTA</p>
       <h2 class="card-date">25 ABR</h2>
       <p class="card-title">Shibuya — Compras Épicas &amp; Vista Incrível</p>
@@ -771,7 +737,6 @@ footer {
   <!-- DIA 5 — 26/04 — KYOTO -->
   <article class="day-card theme-kyoto" id="day-5">
     <div class="card-inner" data-kanji="京">
-      <img class="card-char" src="Kyoto.png" alt="Kyoto" />
       <p class="card-day-num">// DIA 05 &nbsp;•&nbsp; SÁBADO</p>
       <h2 class="card-date">26 ABR</h2>
       <p class="card-title">Bate-volta Kyoto — A Antiga Capital</p>
@@ -841,7 +806,6 @@ footer {
   <!-- DIA 8 — 29/04 — NARUTO -->
   <article class="day-card theme-naruto" id="day-8">
     <div class="card-inner" data-kanji="秋">
-      <img class="card-char" src="Naruto2.png" alt="Naruto" />
       <p class="card-day-num">// DIA 08 &nbsp;•&nbsp; TERÇA</p>
       <h2 class="card-date">29 ABR</h2>
       <p class="card-title">Akihabara &amp; Rolê Livre</p>
@@ -858,7 +822,6 @@ footer {
   <!-- DIA 9 — 30/04 — FUJI -->
   <article class="day-card theme-fuji" id="day-9">
     <div class="card-inner" data-kanji="富">
-      <img class="card-char" src="MontFuji.png" alt="Monte Fuji" />
       <p class="card-day-num">// DIA 09 &nbsp;•&nbsp; QUARTA &nbsp;•&nbsp; ÚLTIMO DIA</p>
       <h2 class="card-date">30 ABR</h2>
       <p class="card-title">Monte Fuji • Fuji-Q Highland → Osaka</p>
